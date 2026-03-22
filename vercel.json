@@ -1,0 +1,41 @@
+{
+  "crons": [
+    {
+      "path": "/api/btc-update",
+      "schedule": "* * * * *"
+    }
+  ]
+}
+```
+
+---
+
+**Vercel এ ২টা Environment Variable add করুন:**
+
+| Name | Value |
+|---|---|
+| `TELEGRAM_TOKEN` | আপনার bot token |
+| `TELEGRAM_GROUP_ID` | Telegram group এর ID |
+
+---
+
+**Group ID কীভাবে পাবেন:**
+
+১. আপনার bot কে group এ add করুন
+২. Browser এ এই URL open করুন:
+```
+https://api.telegram.org/bot<YOUR_TOKEN>/getUpdates
+```
+৩. JSON এ `"chat":{"id":` এর পরের number টাই Group ID — সাধারণত `-100xxxxxxxxx` এরকম
+
+---
+
+Deploy করলে প্রতি মিনিটে group এ এরকম message আসবে:
+```
+📈 Bitcoin Update
+
+💵 USD: $95,432
+💴 BDT: ৳10,497,520
+📊 ২৪ঘণ্টা: +2.34%
+
+🕐 সোমবার, ২৩ মার্চ ২০২৬, রাত ১০:৩০
